@@ -1,0 +1,56 @@
+== Sistema operativo utilizado para compilar==
+
+Ubuntu 18.04.1 LTS con núcleo 4.15.0-36-generic
+
+== Teclas a utilizar ==
+
+M/m: cambia el modo de visualización activa (sólido, puntos, alambre...)
+P/p: cambia la práctica activa (pasa a la siguiente, o de la última a la primera)
+O/o: cambia el objeto activo dentro de la práctica (pasa al siguiente, o del último al primero
+Q/q o ESC: terminar el programación
+V/v: cambia el modo de visualización (inmediato <--> diferido)
+A/a: activa y desactiva las animaciones (solo funciona en la práctica 3)
+R/r: pone todos los parámetros en su valor inicial (solo funciona en la práctica 3)
+>:   aumenta el valor del parámetro (solo funciona en la práctica 3)
+<:   decrementa el valor del parámetro (solo funciona en la práctica 3)
+
+
+== Comentarios P1 ==
+
+- Se ha realizado la programación del cauce gráfico, empleando la clase ShaderProg.Los shaders se encuentran en los archivos 'simple_fs.glsl' y 'simple_vs.glsl'.
+
+- Se permite visualizar un tetraedro (regular) centrado en el (0,0,0) y un cubo sobre el plano Z=0 ambos con longitud 1.
+
+- Se añade la posibilidad de colorear un objeto de la clase MallaInd, mediante el método colorear. Si se le pasa un puntero a un color (Tupla3f en código rgb) pinta la figura de ese color, si por el contrario se le pasa un puntero nulo pinta la figura con un degradado por defecto.
+
+- Se permite cambiar la forma de envío dentro del modo inmediato con la macro DRAW_ELEMENTS.
+
+== Comentarios P2 ==
+
+- Se pueden pasar como parámetros por línea de comandos tanto el nombre del archivo ply
+para contruir el objeto mallaPLY como el del archivo para construir el objeto mallaRevol.
+Si solo se pasa uno, se considera que es para el primero.
+
+- Se crea dos nuevas Sombrero y Huevo que heredan de MallaRevol y son utilizadas en la práctica 3.
+
+== Comentarios P3 ==
+
+- Se opta por declarar clases anidadas para limitar el ámbito de las mismas, pues existen
+solo con el objetivo de crear objetos compuestos a partir de ellas.
+
+Lista de parámetros
+Los diez parámetros tienen la misma velocidad inicial, aceleración e incremento, que son 0.05, 0.02 y 0.01 respectivamente.
+Rotación del brazo(x2). Hay una rotación sobre el eje X por cada brazo, este afecta a todo el brazo del muñeco. Es acotado, tiene ángulo inicial 90 o , semiamplitud de 45 o y frecuencia 1.
+
+Rotación del antebrazo(x2). Hay una rotación sobre el eje X por cada brazo, este afecta a todo el antebrazo del muñeco. Es acotado, tiene ángulo inicial 0 o , semiamplitud de 90 o y frecuencia 1.
+
+Balanceo del sombrero. Hay una rotación sobre el eje Z que afecta a todo el sombrero del muñeco. Es acotado, tiene ángulo inicial de 0 o , semiamplitud de 27 o y frecuencia de 1.
+
+Rotación del sombrero Hay una rotación sobre el eje Y que afecta a todo el sombrero del muñeco. No es acotado, tiene ángulo inicial 0 
+y factor de escala 1.
+
+Rotación del ojo (x2). Hay una traslación sobre los ejes X,Z que afectan a cada ojo. Es acotado, tiene de valor inicial 0, semiamplitud 2 
+y frecuencia 1.
+
+Rotación de la oreja (x2). Hay una rotación sobre el eje Y que afecta a cada oreja. Es acotado, tiene de águlo inicial 0, semiamplitud 
+de 45 o y frecuencia 1.
